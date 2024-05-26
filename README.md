@@ -134,26 +134,62 @@ Example usage:
 
 ```cpp
 #include "Graph.hpp"
-#include "Algorithms.hpp"
 #include <vector>
+#include <iostream>
 
 using namespace std;
-using namespace Algorithms;
 
 int main() {
-    Graph g;
-    vector<vector<int>> graph = {
+    Graph g1;
+    vector<vector<int>> graph1 = {
         {0, 1, 0},
         {1, 0, 1},
-        {0, 1, 0}};
-    g.loadGraph(graph);
-    cout << isConnected(g) << endl;
-    cout << isContainsCycle(g) << endl;
-    cout << isBipartite(g) << endl;
-    cout << shortestPath(g, 0, 2) << endl;
-    cout << negativeCycle(g) << endl;
+        {0, 1, 0}
+    };
+    g1.loadGraph(graph1);
+    
+    Graph g2;
+    vector<vector<int>> graph2 = {
+        {0, 0, 1},
+        {0, 0, 0},
+        {1, 0, 0}
+    };
+    g2.loadGraph(graph2);
+    
+    // Print the graphs
+    cout << "Graph 1:" << endl;
+    cout << g1.printGraph() << endl;
+
+    cout << "Graph 2:" << endl;
+    cout << g2.printGraph() << endl;
+
+    // Add the graphs
+    Graph g3 = g1 + g2;
+    cout << "Graph 1 + Graph 2:" << endl;
+    cout << g3.printGraph() << endl;
+
+    // Subtract the graphs
+    Graph g4 = g1 - g2;
+    cout << "Graph 1 - Graph 2:" << endl;
+    cout << g4.printGraph() << endl;
+
+    // Negate a graph
+    Graph g5 = -g1;
+    cout << "-Graph 1:" << endl;
+    cout << g5.printGraph() << endl;
+
+    // Multiply graph by a scalar
+    Graph g6 = g1 * 2;
+    cout << "Graph 1 * 2:" << endl;
+    cout << g6.printGraph() << endl;
+
+    // Compare graphs
+    cout << "Graph 1 == Graph 2: " << (g1 == g2) << endl;
+    cout << "Graph 1 != Graph 2: " << (g1 != g2) << endl;
+
     return 0;
 }
+
 ```
 
 ## Run
