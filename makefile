@@ -1,3 +1,7 @@
+/*
+ * Author: yehonatan768@gmail.com
+ * ID: 213637424
+ */
 CXX= clang++
 CXXFLAGS=-Wall -g
 
