@@ -35,7 +35,7 @@ namespace Algorithms {
     std::string isBipartite(Graph g);
 
     /**
-     * @brief Finds the shortest path between two vertices in the graph using BFS.
+     * @brief Finds the shortest path between two vertices in the graph using Bellman-Ford.
      * 
      * @param g The Graph object representing the graph.
      * @param start The starting vertex.
